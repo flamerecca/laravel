@@ -1,3 +1,6 @@
-# My Awesome Book
+# laravel 筆記
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+如果想要接受專業教學，請不要看這份筆記。因為這是一邊撰寫一邊研究的小筆記，可能會有很多的錯誤。
+
+
+
