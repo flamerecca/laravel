@@ -50,10 +50,32 @@ Route::get('/user/{id}/', function ($id){
 Route::get('/user/{username}/', function ($username){
 })->where('username', '[A-Za-z]+');
 
-Route::get('/post/{id}/{slug}', function ($username){
+Route::get('/post/{id}/{slug}', function ($id, $slug){
 
 })->where(['id'=>'[0-9]+', 'slug'=>'[A-Za-z]+']);//用陣列處理
 ```
 
 由上往下進行匹配，如果全部條件均不符合，回傳 404 錯誤。
+
+## 自我複習
+
+* 一般使用
+
+  * Route::get\('/user/{id}/comments/{commentId}', function \(  
+        $id,  
+        $commentId
+
+    \){  
+    }\);
+
+* 使用問號
+  * Route::get\('/user/{id**?**}/', function \(**$id= 'default'**\){
+    }\);
+* 正則處理（一個或多個）
+  * Route::get\('/user/{id}/', function \($id\){
+    }\)**-&gt;where\('id', '\[0-9\]+'\);**
+  * Route::get\('/post/{id}/{slug}', function \($id, $slug\){
+    }\)**-&gt;where\(\['id'=&gt;'\[0-9\]+', 'slug'=&gt;'\[A-Za-z\]+'\]\);**
+
+
 

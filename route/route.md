@@ -50,9 +50,9 @@ Route::get('/', 'WelcomeController@index')
 
 ## 自我複習
 
-* Route::get\(\)
-* Route::match\(\)
-* 'WelcomeController@index' 對應 WelcomeController 的 index\(\) 函式。
+* [ ] Route::get\(\) 是什麼意思？
+* [ ] Route::match\(\) 用法是？
+* [ ] 'WelcomeController@index' 對應什麼函式？
 
 
 
