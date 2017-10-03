@@ -91,13 +91,19 @@ Route::get('/user/{id?}/', function ($id= 'default'){
 
 ```php
 Route::get('/user/{id}/', function ($id){
-    
-});
+})->where('id', '[0-9]+');
 
 Route::get('/user/{username}/', function ($username){
-    
-});
+})->where('username', '[A-Za-z]+');
+
+Route::get('/post/{id}/{slug}', function ($username){
+
+})->where(['id'=>'[0-9]+', 'slug'=>'[A-Za-z]+']);//用陣列處理
 ```
 
 由上往下進行匹配，如果全部條件均不符合，回傳 404 錯誤。
+
+
+
+
 
