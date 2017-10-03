@@ -48,3 +48,11 @@ Route::get('/', 'WelcomeController@index')
 
 會呼叫 `WelcomeController` 的 `index()` 函式。
 
+## 自我複習
+
+* Route::get\(\)
+* Route::match\(\)
+* 'WelcomeController@index' 對應 WelcomeController 的 index\(\) 函式。
+
+
+
