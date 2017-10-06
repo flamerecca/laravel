@@ -11,9 +11,15 @@ Laravel 裡面區分成兩種：一般 php 以及 Blade 模板。
 return view('home');
 ```
 
+或者使用 `View::make()` ，或者注入 `Illuminate\View\ViewFactory`
 
+## 傳遞變數
 
+```php
+return view('task.index')->with('tasks', Task::all());
+```
 
+這會傳遞一個名為`tasks`的變數，內容為`Task::all()`的回傳。
 
 
 

@@ -86,5 +86,19 @@ Route::group(['namespace'=>'API'], function(){
 
 ## 名稱前置詞
 
+使用 as - prefix 來處理路徑名稱
+
+```php
+Route::group(['as'=>'users.', 'prefix'=>'users'], function(){
+    Route::group(['as'=>'comments.', 'prefix'=>'comments'], function(){
+        Route::get('{id}', function(){
+            //...
+        })->name('show');
+    });
+});
+```
+
+讓 `users/comments/5` 對應路由 `users.comments.show`
+
 
 
