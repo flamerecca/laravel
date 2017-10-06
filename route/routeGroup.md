@@ -32,9 +32,9 @@ Route::group(['middleware' => 'auth'], function(){
 class DashboardController extends Controller{
     public function __construct(){
         $this->middleware('auth');
-        
+
         $this->middleware('admin-auth')->only('admin');
-    
+
         $this->middleware('team-member')->except('admin');
     }
 }
@@ -50,6 +50,29 @@ Route::group(['prefix' => 'api'], function(){
 ```
 
 ## 子網域路由
+
+```php
+Route::group(['domain'=>'api.myapp.com'], function(){
+    Route::get('/', function(){
+        //...
+    });
+});
+```
+
+加入參數的方法
+
+```php
+Route::group(['domain'=>'{account}.myapp.com'], function(){
+    Route::get('/', function($account){
+        //...
+    });
+    Route::get('users/{id}', function($account, $id){
+        //...
+    });
+});
+```
+
+## 命名空間前置詞
 
 
 
