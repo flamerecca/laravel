@@ -7,6 +7,7 @@
   * [路由參數](/route/routeAttribute.md)
   * [路由名稱](//route/routeName.md)
   * [路由群組](/route/routeGroup.md)
+  * [視圖](//route/view.md)
   * [控制器](/route/controller.md)
   * [路由快取](/route/routeCache.md)
   * [表單欺騙](/route/formCheat.md)
