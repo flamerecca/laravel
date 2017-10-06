@@ -74,7 +74,17 @@ Route::group(['domain'=>'{account}.myapp.com'], function(){
 
 ## 命名空間前置詞
 
+```php
+Route::get('/', 'controllerA@index');
+// APP\Http\Controllers\controllerA
 
+Route::group(['namespace'=>'API'], function(){
+    Route::get('api/', 'controllerB@index');
+    // APP\Http\Controllers\API\controllerB
+});
+```
+
+## 名稱前置詞
 
 
 
