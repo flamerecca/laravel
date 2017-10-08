@@ -22,10 +22,37 @@ use Illuminate\Http\Request;
 
 use App/Http/Requests
 
-class TaskController extends controller
-{
+class TaskController extends controller{
+
 }
 ```
+
+然後，我們加入一個public method，功能類似 Yii2 的 action：
+
+```php
+<?php
+
+namespace App\Http\Controllers
+
+use Illuminate\Http\Request;
+
+use App/Http/Requests
+
+class TaskController extends controller{
+
+    public function home(){
+        return "Hello, world!";
+    }
+}
+```
+
+然後搭配一個簡單的路由
+
+```php
+Route::get('/', 'TasksController@home');
+```
+
+這樣就行了！之後訪問 / 時，就會看到 Hello, world!
 
 
 
