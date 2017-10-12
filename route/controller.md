@@ -54,5 +54,47 @@ Route::get('/', 'TasksController@home');
 
 這樣就行了！之後訪問 / 時，就會看到 Hello, world!
 
+## 控制器方法
+
+```php
+class TaskController extends controller{
+
+    public function index(){
+        return view('task.index')
+            ->with('tasks', Task::all());
+    }
+}
+```
+
+這樣會載入` tasks/index.blade.php `或者 `tasks/index.php` 的 view，並傳入tasks變數。
+
+## 取得用戶輸入
+
+這裡先假設我們用 POST 方式取得Task的資料。資料有兩部份：標題（title）和說明（description）。
+
+先簡單的綁定 POST 動作
+
+```php
+// routes/web.php
+Route::post('tasks', 'TasksController@store');
+```
+
+從 POST 取得輸入的方法有兩種。其中一種，是下面使用的Input 介面
+
+```php
+// TasksController.php
+//use Illuminate\Support\facades\Input
+...
+public function store(){
+    $task = new Task;
+    
+    $task->title = Input::get('title');
+    $task->description = Input::get('description');
+    $task->save();
+
+    return redirect('tasks');
+}
+```
+
 
 
